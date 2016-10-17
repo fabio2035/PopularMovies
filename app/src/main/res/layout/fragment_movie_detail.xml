@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0000"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_blank_fragment"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textSize="@dimen/detail_main_title_size"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:id="@+id/movie_original_title"/>
+
+    <ImageView
+        android:layout_width="@dimen/fragment_detail_width_img"
+        android:layout_height="@dimen/fragment_detail_height_img"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:id="@+id/poster_image_detail"
+        android:layout_below="@+id/movie_original_title"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:text="@string/movie_synopsis_title"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:id="@+id/movie_synopsis_title"
+        android:layout_below="@+id/poster_image_detail"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:textColor="#ffffff"
+        android:layout_below="@id/movie_synopsis_title"
+        android:id="@+id/movie_synopsis"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_below="@id/movie_synopsis"
+        android:text="@string/movies_ratings_title"
+        android:id="@+id/movie_ratings_title_id"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:textColor="#ffffff"
+        android:text="@string/default_ratings_desc"
+        android:layout_below="@id/movie_ratings_title_id"
+        android:id="@+id/movies_rating"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:layout_below="@id/movies_rating"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:text="@string/movies_release_date_title"
+        android:id="@+id/movies_release_date_title_id"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fragment_detail_top_padding"
+        android:textColor="#ffffff"
+        android:text="@string/default_release_date_text"
+        android:layout_below="@id/movies_release_date_title_id"
+        android:id="@+id/movies_date_release"/>
+
+</RelativeLayout>
+</ScrollView>

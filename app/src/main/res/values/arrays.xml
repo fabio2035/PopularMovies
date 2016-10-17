@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_sort_orderEntries">
+        <item>@string/pref_sort_value_topr</item>
+        <item>@string/pref_sort_value_popr</item>
+    </string-array>
+    <string-array name="pref_sort_orderValues">
+        <item>@string/pref_sort_entry_topr</item>
+        <item>@string/pref_sort_entry_popr</item>
+
+    </string-array>
+</resources>

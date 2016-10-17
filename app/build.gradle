@@ -17,6 +17,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    buildTypes.each {
+        it.buildConfigField 'String', 'MOVIEDB_API_KEY', "\"\""
+        it.buildConfigField 'String', 'MOVIEDB_BASE_URL', "\"https://api.themoviedb.org/3/movie/\""
+        it.buildConfigField 'String', 'MOVIEDB_IMAGE_BASE_URL', "\"https://image.tmdb.org/t/p/\""
+        it.buildConfigField 'String', 'MOVIEDB_PIC_SIZE_SMALL', "\"w185\""
+        it.buildConfigField 'String', 'MOVIEDB_PIC_SIZE_BIG', "\"w500\""
+    }
 }
 
 dependencies {
@@ -25,5 +32,13 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
     testCompile 'junit:junit:4.12'
+}
+
+repositories {
+
+    mavenCentral()
+
 }
