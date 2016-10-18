@@ -51,7 +51,6 @@ public class MovieObjectAdapter extends ArrayAdapter<MovieObject> {
                      holder = (ViewHolder) convertView.getTag();
                  }
 
-
                 Uri builtUri = Uri.parse(BuildConfig.MOVIEDB_IMAGE_BASE_URL).buildUpon()
                         .appendPath(BuildConfig.MOVIEDB_PIC_SIZE_SMALL).appendPath(movieObject.getPoster_path())
                 .build();
