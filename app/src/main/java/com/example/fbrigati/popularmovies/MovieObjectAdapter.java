@@ -24,6 +24,7 @@ public class MovieObjectAdapter extends ArrayAdapter<MovieObject> {
 
     public final String LOG_TAG = MovieObjectAdapter.class.getSimpleName();
 
+
     public MovieObjectAdapter(Activity context, List<MovieObject> movieObjectList) {
         super(context, 0, movieObjectList);
     }
@@ -32,7 +33,7 @@ public class MovieObjectAdapter extends ArrayAdapter<MovieObject> {
     public View getView(int position, View convertView, ViewGroup parent){
         // Gets the AndroidFlavor object from the ArrayAdapter at the appropriate position
                 MovieObject movieObject = getItem(position);
-
+                ViewHolder holder;
 
                  // Adapters recycle views to AdapterViews.
                  // If this is a new View object we're getting, then inflate the layout.
@@ -42,23 +43,32 @@ public class MovieObjectAdapter extends ArrayAdapter<MovieObject> {
                      convertView = LayoutInflater.from(getContext()).inflate(
                              R.layout.fragment_movie_item, parent, false);
 
+                     holder = new ViewHolder();
+                     holder.imageHolder = (ImageView) convertView.findViewById(R.id.poster_image);
+                     holder.textHolder = (TextView) convertView.findViewById(R.id.movie_title);
+                     convertView.setTag(holder);
+                 }else{
+                     holder = (ViewHolder) convertView.getTag();
                  }
 
-                 ImageView iconView = (ImageView) convertView.findViewById(R.id.poster_image);
 
                 Uri builtUri = Uri.parse(BuildConfig.MOVIEDB_IMAGE_BASE_URL).buildUpon()
-                        .appendPath(BuildConfig.MOVIEDB_PIC_SIZE_SMALL).appendPath(movieObject.poster_path)
+                        .appendPath(BuildConfig.MOVIEDB_PIC_SIZE_SMALL).appendPath(movieObject.getPoster_path())
                 .build();
-
 
                 String ref = builtUri.toString().replace("%2F","");
 
-                 Picasso.with(getContext()).load(ref).into(iconView);
+                 Picasso.with(getContext()).load(ref).into(holder.imageHolder);
 
-                 TextView versionNameView = (TextView) convertView.findViewById(R.id.movie_title);
-                 versionNameView.setText(movieObject.title );
+                 holder.textHolder.setText(movieObject.getTitle());
 
                  return convertView;
 
+    }
+
+    static class ViewHolder {
+        TextView textHolder;
+        ImageView imageHolder;
+        int position;
     }
 }

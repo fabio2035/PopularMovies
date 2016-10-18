@@ -94,6 +94,7 @@ public class MovieObject implements Parcelable {
         release_date = in.readString();
         poster_path = in.readString();
         backdrop_path = in.readString();
+        vote_average = in.readString();
     }
 
     @Override
@@ -109,6 +110,7 @@ public class MovieObject implements Parcelable {
         dest.writeString(release_date);
         dest.writeString(poster_path);
         dest.writeString(backdrop_path);
+        dest.writeString(vote_average);
     }
 
     public static final Creator<MovieObject> CREATOR = new Creator<MovieObject>() {
