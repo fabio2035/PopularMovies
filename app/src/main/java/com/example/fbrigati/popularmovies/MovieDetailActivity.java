@@ -36,7 +36,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         }else
         {
             movieObj = savedInstanceState.getParcelable(MovieList.ID_MESSAGE);
-            Log.v(LOG_TAG, "It has savedInstance! with: " + movieObj.title);
+            //Log.v(LOG_TAG, "It has savedInstance! with: " + movieObj.title);
         }
     }
 
